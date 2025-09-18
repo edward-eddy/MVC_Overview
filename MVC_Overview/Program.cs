@@ -17,10 +17,12 @@ namespace MVC_Overview
             ////app.MapGet("/login", () => "Logged In!");
             //app.MapGet("/login", Login);
 
+            app.UseStaticFiles();
+
             // MVC 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller}/{action}/{id}"
+                pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
 
             app.Run();
